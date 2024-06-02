@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+ <html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="utf-8" />
+    <title>Stuff and Things</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  
+    <!--this is a google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" /> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
+    <!-- this is the end of the google font -->
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css" /> 
+  </head>
+  <body>
+    <div class="container mt-3">
+      <div id="header-div">
+        <div id="navbar-div">
+          <nav id="navbar">
+            <header>
+              <h1 id="logo">Stuff and Things</h1>
+            </header>
+            <a id="home-button" class="btn btn-primary" href="/">Store</a>
+            <% if (typeof (user.firstName) != "undefined") { %>
+              <a id="profile-button" class="btn btn-primary" href="/profile">Profile</a>
+            <% } else { %>
+              <a id="login-button" class="btn btn-primary" href="/login">Login</a>
+            <% } %>
+            <a id="cart-button" class="btn btn-primary" href="/shoppingcart">Cart</a>
+          </nav>
+        </div>
+      </div>
+    </div>

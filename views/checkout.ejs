@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs") %>
+<main class="container mt-3">
+  <div id="mainBox">
+    <header>
+      <h1>Checkout</h1>
+    </header>
+
+    <form method="POST" action="/checkout" id="checkoutForm" >
+      <label for="fname">First Name: </label>
+      <input type="text" id="fname" name="fname" value="<%= userInfo[0].firstName %>" />
+      <p id="fname-error" class="text-danger"></p>
+
+      <label for="lname">Last Name: </label>
+      <input type="text" id="lname" name="lname" value="<%= userInfo[0].lastName %>" />
+      <p id="lname-error" class="text-danger"></p>
+
+      <label for="zip">Zip Code: </label>
+      <input type="text" id="zip" name="zipCode" value="<%= userInfo[0].zipCode %>" />
+      <p id="zip-error" class="text-danger"></p>
+      
+      <p id="city">City: <%= userInfo[0].city %></p>
+      <p id="state">State: <%= userInfo[0].state %></p>
+
+      <select id="shipping" name="shipping">
+        <option value="null">Select Method</option>
+        <option value="Next-day Delivery" id="nexDmethod"></option>
+        <option value="Two-day Delivery" id="twoDmethod"></option>
+        <option value="Regular Delivery" id="Rmethod"></option>
+      </select>
+      <p class="text-danger" id="shippingError"></p>
+
+      Payment Options: 
+      <select id="card" name="card">
+        <option value="null" >Select One</option>
+        <option value="v">Visa</option>
+        <option value="m">MasterCard</option>
+        <option value="d">Discover</option>
+      </select>
+      <p class="text-danger" id="cardError"></p>
+      <br />
+
+      <input type="submit" class="btn btn-primary" value="Buy Now" />
+    </form>
+    <br />
+  </div>
+</main>
+
+<script src="/js/checkout.js"></script>
+<%- include("partials/footer.ejs") %>
+

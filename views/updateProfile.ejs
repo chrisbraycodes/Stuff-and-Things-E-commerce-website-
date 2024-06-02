@@ -1,0 +1,56 @@
+<%- include("partials/header.ejs") %>
+<br />
+<main class="profile-body container mt-3">
+  <section class="info-div">
+    <form method="POST" action="/profile-update" id="updateProfile">
+      <label for="fName">First Name:</label>
+      <input type="text" id="fName" name="fName" value="<%= userInfo[0].firstName %>" />
+      <p class="text-danger" id="fNameError"></p>
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lName" name="lName" value="<%= userInfo[0].lastName %>" />
+      <p class="text-danger" id="lNameError"></p>
+
+      <div class="form-check form-check-inline">
+        <h4>Gender:</h4>
+        <input
+          type="radio"
+          name="gender"
+          value="m"
+          <% if (userInfo[0].gender = 'm') { %>
+            checked="true"
+          <% } %>
+        />Male
+        <input
+          type="radio"
+          name="gender"
+          value="f"
+          <% if (userInfo[0].gender = 'f') { %>
+            checked="true"
+          <% } %>
+        />Female
+      </div>
+      <br />
+      <br />
+
+      Street Address: <input type="text" id="streetAddress" name="streetAddress" value="<%= userInfo[0].streetAddress %>" />
+      <p class="text-danger" id="addressError"></p>
+
+      Zip Code: <input type="text" id="zip" name="zip" value="<%= userInfo[0].zipCode %>" />
+      <p class="text-danger"id="zipError"></p>
+
+      City: <input type="text" name="city" id="city" value="<%= userInfo[0].city %>" />
+      <p class="text-danger" id="cityError"></p>
+
+      State: <input type="text" name="state" id="state" value="<%= userInfo[0].state %>" />
+      <p class="text-danger" id = "stateError"></p>
+      <br />
+
+      <input type="submit" class="btn btn-outline-primary" value="Update Profile" />
+    </form>
+  </section>
+</main>
+<br />
+
+<script src="/js/updateProfile.js"></script>
+<%- include("partials/footer.ejs") %>

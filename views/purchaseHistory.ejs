@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+<br />
+<main class="profile-body container mt-3">
+  <nav class="profile-menu">
+    <span id="history-tab"><h2><strong>Purchase History</strong></h2></span>
+    <hr/>
+    <span id="account-tab"><h3>Account Details</h3></span>
+  </nav>
+
+  <section class="info-div">
+    <header>
+      <h3>Past Purchases</h3>
+    </header>
+
+    <% for (i=0; i < purchaseHistory.length; i++) { %>
+      <div class="receipt-card">
+        <p>Spent: $<%=receipts[i].total %> on <%=receipts[i].date %></p>
+        <br/>
+
+        <% for (j=0; j < purchaseHistory[i].length; j++) { %>
+          <p><%=purchaseHistory[i][j].quantity %> <%=purchaseHistory[i][j].productName %> for $<%=purchaseHistory[i][j].price %> each. </p>
+          <br/>
+        <% } %>
+      </div>
+    <% } %> <!--end of purchaseHist-->
+    <hr/>
+    <p>Please call customer support if a receipt is missing or incorrect.</p>
+  </section>
+</main>
+
+<script src="/js/userMenu.js"></script>
+<%- include("partials/footer.ejs") %>

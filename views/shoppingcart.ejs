@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs") %>
+<main class="container mt-3">
+  <div id="mainBox">
+    <header>
+      <h1>Shopping Cart</h1>
+    </header>
+
+    <% for (i = 0; i < items.length; i++ ) { %>
+      <div class="product-container container mtn-3">
+        <img src=<%= items[i].url %> alt="product image" width="300">
+        <div class="prodDescr">
+          <h2> Product Description</h2>
+          <br>
+          Name: <span id="name"><%= items[i].productName %></span>
+          <br>
+          Quantity: <span id="quantity"><%= items[i].quantity %></span>
+          <br>
+          Price: <span id="price">$<%= items[i].price %> ea. </span>
+        </div>
+      </div>
+    <% } %>
+
+    <form method="POST" action="/shoppingcart/clear" class="mb-3">
+      <button class="btn btn-secondary">Clear Cart</button>
+    </form>
+    <% if (items.length < 1) { %>
+      <a href="/checkout" class="btn btn-primary disabled">Complete Purchase</a>
+    <% } else { %>
+      <a href="/checkout" class="btn btn-primary">Complete Purchase</a>
+    <% } %>
+  </div>
+</main>
+
+<%- include("partials/footer.ejs") %>

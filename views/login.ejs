@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+   
+<main class="container mt-3">
+  <div id="mainBox" >
+    <header>
+      <h1>Login</h1>
+    </header>
+    <form method="POST" action="/login">
+      <label for="login-username">Username: </label>
+      <input type="text" name="username" id="login-username" />
+      <p class="text-danger" id="login-username-error"></p>
+
+      <label for="login-password">Password: </label>
+      <input type="password" name="password" id="login-password" />
+      <p class="text-danger" id="login-password-error"></p>
+
+      <button id="login-form-submit-button" class="btn btn-outline-primary">Login</button>
+      <a class="btn btn-outline-secondary" href="/signup">Create Account</a>
+    </form>
+  </div>
+</main>
+
+<% if (typeof loginError != "undefined" && loginError) { %>
+  <h3 class="error">Wrong credentials!</h3>
+<% } %>
+
+<script src="/js/login.js"></script>
+
+<%- include("partials/footer.ejs") %>

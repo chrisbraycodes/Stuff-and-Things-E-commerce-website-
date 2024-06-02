@@ -1,0 +1,9 @@
+<div class="store-product-container">
+  <div class="store-img-description-container">
+    <figure>
+      <img src="<%= product.image %>" alt="<%= product.name %>" class="store-product-image" />
+      <figcaption><strong>Price: </strong>$<%= product.price.toFixed(2) %></figcaption>
+    </figure>
+    <button class="btn btn-info product-details" data-product='<%= JSON.stringify(product) %>'>Details</button>
+  </div>
+</div>

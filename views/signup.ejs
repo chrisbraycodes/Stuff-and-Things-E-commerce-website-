@@ -1,0 +1,56 @@
+<%- include("partials/header.ejs") %>
+<div class="container mt-3">
+  <header>
+    <h1> Sign Up </h1>
+  </header>
+  <main id="mainBox">
+    <form method="POST" action="/signup" id="signupForm">
+      <label for="fname">First Name:</label>
+      <input type="text" id="fName" name="fName" />
+      <p class="text-danger" id="fNameError"></p>
+
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lName" name="lName" />
+      <p class="text-danger" id="lNameError"></p>
+
+      <div class="form-check form-check-inline">
+        <h4>Gender:</h4>
+        <input type="radio" name="gender" value="m" checked="true" /> Male
+        <input type="radio" name="gender" value="f" /> Female
+      </div>
+      <br />
+      <br />
+
+      Street Address: <input type="text" id="streetAddress" name="streetAddress" />
+      <p class="text-danger" id="addressError"></p>
+
+      Zip Code: <input type="text" id="zip" name="zip" />
+      <p class="text-danger"id="zipError"></p>
+
+      City: <input type="text" name="city" id="city" />
+      <p class="text-danger" id="cityError"></p>
+
+      State: <input type="text" name="state" id="state" />
+      <p class="text-danger" id = "stateError"></p>
+
+      Username: <input type="text" name="username" id="username" />
+      <p class="text-danger" id="usernameError"></p>
+
+      Password: <input type="password" id="password" name="password" />
+      <p class="text-danger" id="passwordError"></p>
+
+      Confirm Password: <input type="password" id="passwordAgain" />
+      <p class="text-danger" id="passwordAgainError"></p>
+      <br />
+
+      <input type="submit" class="btn btn-outline-primary" value="Sign Up!" />
+    </form>
+
+    <% if (typeof usernameError != "undefined" && usernameError) { %>
+      <h3 class="text-danger" class = "error">Username already exists!</h3>
+    <% } %>
+  </div>
+</main>
+
+<script src="/js/signup.js"></script>
+<%- include("partials/footer.ejs") %>

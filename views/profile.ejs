@@ -1,0 +1,54 @@
+<%- include("partials/header.ejs") %>
+<br />
+<main class="profile-body container mt-3">
+  <nav class="profile-menu">
+    <span id="account-tab"><h2><strong>Account Details</strong></h2></span>
+    <hr />
+    <span id="history-tab"><h4>Purchase History</h4></span>
+  </nav>
+
+  <section class="info-div">
+    <p>
+      <strong class="changeFont">First Name: </strong> <%= userInfo[0].firstName %>
+    </p>
+    <br />
+    <p>
+      <strong class="changeFont">Last Name: </strong><%= userInfo[0].lastName %>
+    </p>
+    <br />
+    <p>
+      <strong class="changeFont">Gender: </strong><%= userInfo[0].gender %>
+    </p>
+    <br />
+    <p>
+      <strong class="changeFont">Username: </strong> <%= userInfo[0].username %>
+    </p>
+    <br />
+    <p>
+      <strong class="changeFont">Street Address: </strong><%= userInfo[0].streetAddress %>
+    </p>
+    <br />
+    <p>
+      <strong class="changeFont">City: </strong><%= userInfo[0].city %>
+    </p>
+    <br />
+    <p>
+      <strong class="changeFont">State: </strong><%= userInfo[0].state %>
+    </p>
+    <br />
+    <p>
+      <strong class="changeFont">Zip: </strong><%= userInfo[0].zipCode %>
+    </p>
+  </section>
+</main>
+<br />
+<br />
+<a href="/profile-update" class="btn btn-primary mb-3">Update Profile</a>
+<form action="/logout">
+  <button class="btn btn-primary">
+    logout
+  </button>
+</form>
+
+<script src="/js/userMenu.js"></script>
+<%- include("partials/footer.ejs") %>

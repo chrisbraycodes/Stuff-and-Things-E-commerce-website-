@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+<header class="container">
+  <div class="p-5 text-center bg-light">
+    <h1 class="mb-3">Thank you for your purchase!</h1>
+    <h4 class="mb-3">Your business is important to us.</h4>
+  </div>
+</header>
+<main class="purchase-info container mt-3">
+  <h3> Today's Purchase: </h3>
+  <% for (product of products) { %>
+    <h3><%= product.quantity %> X <%= product.productName %> for <%= product.price %></h3>
+  <% } %>
+  <h3> Total price: <span id="totalPrice"><%= grandTotal %></span></h3>
+</main>
+
+<%- include("partials/footer.ejs") %>
